@@ -38,7 +38,7 @@ fn setup(root: &Path) {
         .expect(&format!("Couldn't create '{}'", lua_dir.display()));
 
     let from = lib_path;
-    let to = lua_dir.join(lib_name).with_extension("so");
+    let to = lua_dir.join(lib_name).with_extension(LIB_EXTENSION);
     std::fs::copy(&from, &to).expect(&format!(
         "Couldn't copy {} to {}",
         from.display(),
